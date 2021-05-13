@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Blog
 from .models import Two
 from .models import Three
@@ -27,3 +27,7 @@ def four(request):
 def five(request):
     input = Five.objects.all()
     return render(request, 'five.html', {'input':input})    
+
+def detail(request, id):
+    blog = get_object_or_404(Blog, pk = id)
+    return render(request, 'detail.html',{'blog':blog})

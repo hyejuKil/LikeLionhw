@@ -25,4 +25,5 @@ urlpatterns = [
     path('three/', myapp.views.three, name = 'three.html'),
     path('four/', myapp.views.four, name = 'four.html'),
     path('five/',myapp.views.five,name = 'five.html'),
+    path('<str:id>', myapp.views.detail, name = 'detail'),
 ]
